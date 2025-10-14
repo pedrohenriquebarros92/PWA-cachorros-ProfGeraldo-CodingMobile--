@@ -1,2 +1,0 @@
-let CACHE_NAME="pwa-geocam-v1",FILES_TO_CACHE=["./","./index.html","./manifest.json"];self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE_NAME).then(e=>e.addAll(FILES_TO_CACHE))),self.skipWaiting()}),self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(e=>Promise.all(e.map(e=>e!==CACHE_NAME&&caches.delete(e))))),self.clients.claim()}),self.addEventListener("fetch",e=>{"GET"===e.request.method&&e.respondWith(caches.match(e.request).then(t=>t||fetch(e.request)))});
-//# sourceMappingURL=sw.js.map
