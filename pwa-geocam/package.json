@@ -1,0 +1,21 @@
+{
+  "name": "pwa-geocam",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.16.0",
+    "@parcel/transformer-webmanifest": "^2.16.0",
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.16.0"
+  }
+}
