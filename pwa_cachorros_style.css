@@ -1,0 +1,123 @@
+/* pwa-cachorros-style.css
+   Paleta inspirada em pelagens de cães: creme, dourado, castanho, tigrado/brindle, preto e branco.
+   Mobile-first, responsivo, acessível e pronto para PWA educativo.
+*/
+:root{
+  --fur-cream: #F3E8D8; /* creme claro */
+  --fur-golden: #D9A24A; /* dourado / caramelo */
+  --fur-brown:  #6B3F28; /* castanho escuro */
+  --fur-brindle-start: #B98C62; /* tigrado claro */
+  --fur-brindle-end:   #5C3A2E; /* tigrado escuro */
+  --fur-black:  #222222; /* preto */
+  --fur-white:  #FFFFFF; /* branco */
+  --accent:     #8AA36C; /* verde suave para botões/estado */
+  --muted:      #8A7F78; /* texto secundário */
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 6px 18px rgba(43,40,35,0.18);
+  --radius: 14px;
+}
+/* Page base */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--fur-cream) 0%, #efe6d8 40%, #e7dfd5 100%);
+  color: var(--fur-black);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:1.25rem;
+}
+/* App container */
+.app-container{
+  max-width:760px;
+  margin:0 auto;
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));
+  border-radius:var(--radius);
+  padding:1.25rem;
+  box-shadow:var(--shadow);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+.header{
+  display:flex;
+  gap:0.75rem;
+  align-items:center;
+}
+.logo-circle{
+  min-width:56px; min-height:56px; border-radius:50%;
+  background: radial-gradient(circle at 30% 20%, var(--fur-golden), var(--fur-brindle-start));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) inset;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:var(--fur-white);
+}
+h1{
+  margin:0; font-size:1.4rem; line-height:1.1;
+}
+.lead{
+  margin:0.25rem 0 1rem 0; color:var(--muted); font-size:0.95rem;
+}
+/* Card to show image and controls */
+.card{
+  border-radius:12px;
+  padding:0.8rem;
+  background: linear-gradient(180deg, rgba(217,162,74,0.08), rgba(108,68,46,0.03));
+  border: 1px solid rgba(107,63,40,0.06);
+  display:flex; flex-direction:column; gap:0.75rem;
+}
+.controls{
+  display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;
+}
+.button{
+  appearance:none; border:0; padding:0.6rem 0.9rem; border-radius:10px;
+  background: linear-gradient(180deg, var(--fur-golden), var(--fur-brown));
+  color:var(--fur-white); font-weight:600; cursor:pointer;
+  box-shadow: 0 6px 14px rgba(107,63,40,0.25);
+}
+.button:active{ transform: translateY(1px); }
+.button.secondary{
+  background: linear-gradient(180deg, rgba(138,163,108,0.14), rgba(138,163,108,0.06));
+  color: var(--fur-brown);
+  border:1px solid rgba(138,163,108,0.18);
+}
+.button:focus{ outline:3px solid rgba(138,163,108,0.18); outline-offset:2px }
+.img-wrap{
+  display:flex; justify-content:center; align-items:center;
+  padding:0.5rem; border-radius:10px; background:var(--glass);
+}
+img.dog-photo{
+  max-width:100%; height:auto; border-radius:10px; display:block;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  border: 6px solid rgba(255,255,255,0.7);
+}
+.status{
+  font-size:0.95rem; color:var(--fur-brown);
+}
+.small{font-size:0.85rem;color:var(--muted)}
+/* List / footprint */
+.info-row{display:flex; justify-content:space-between; gap:1rem; align-items:center}
+.card .meta{font-size:0.88rem;color:var(--muted)}
+/* Footer */
+.footer{ margin-top:0.75rem; font-size:0.8rem; color:var(--muted); text-align:center }
+/* Brindle accent bar — decorative */
+.brindle-bar{
+  height:8px; border-radius:8px; width:100%;
+  background: linear-gradient(90deg, var(--fur-brindle-start), var(--fur-brindle-end));
+  margin:0.8rem 0;
+}
+/* Responsive tweaks */
+@media (min-width:640px){
+  body{padding:2rem}
+  h1{font-size:1.6rem}
+  .app-container{padding:1.5rem}
+  .logo-circle{min-width:72px;min-height:72px}
+}
+@media (min-width:900px){
+  .app-container{display:grid;grid-template-columns:1fr 360px; gap:1rem; align-items:start}
+  .card{height:100%}
+}
+/* Accessibility helpers */
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+/* Utility */
+.center{text-align:center}
+
+/* End of pwa-cachorros-style.css */
