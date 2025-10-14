@@ -25,16 +25,36 @@ export default function App() {
     }
   }, []);
 
-  return (
-    <div style={{ padding: '1rem', fontFamily: 'sans-serif' }}>
-      <h1>PWA GeoCam</h1>
-      <p>Exemplo de PWA com React, geolocalização e API pública (Dog CEO).</p>
-      <button onClick={fetchDog}>Buscar dog</button>
-      {dogUrl && <img src={dogUrl} alt="dog" width="300" />}
-      <p>{status}</p>
-    </div>
-  );
-}
+ return (
+  <div className="app-container">
+    <header className="header">
+      <div className="logo-circle">🐶</div>
+      <div>
+        <h1>PWA GeoCam</h1>
+        <p className="lead">Exemplo de PWA com React, geolocalização e API pública (Dog CEO).</p>
+      </div>
+    </header>
 
-// Outras funções e comentários originais (câmera, geolocalização etc.)
-// podem ser reintroduzidos conforme a versão completa anterior.
+    <div className="card">
+      <div className="controls">
+        <button className="button" onClick={fetchDog}>Buscar dog</button>
+        <div className="meta small">Dica: toque para buscar uma nova imagem</div>
+      </div>
+
+      <div className="brindle-bar" aria-hidden="true"></div>
+
+      {dogUrl && (
+        <div className="img-wrap center">
+          <img className="dog-photo" src={dogUrl} alt="Foto aleatória de cachorro" />
+        </div>
+      )}
+
+      <p className="status">{status}</p>
+    </div>
+
+    <footer className="footer">App educativo — cores inspiradas em pelagens</footer>
+  </div>
+);
+
+
+
