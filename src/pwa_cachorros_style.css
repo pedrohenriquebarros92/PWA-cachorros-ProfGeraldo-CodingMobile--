@@ -16,7 +16,7 @@
   --shadow: 0 6px 18px rgba(43,40,35,0.18);
   --radius: 14px;
 }
-/* Page base */
+/* Página base */
 *{box-sizing:border-box}
 html,body,#root{height:100%}
 body{
@@ -82,7 +82,7 @@ h1{
 .button:focus{ outline:3px solid rgba(138,163,108,0.18); outline-offset:2px }
 .img-wrap{
   display:flex; justify-content:center; align-items:center;
-  padding:0.5rem; border-radius:10px; background:var(--glass);
+  padding:0.5rem; border-radius:10px; background:var(--glass) /*função glass para efeito quente */;
 }
 img.dog-photo{
   max-width:100%; height:auto; border-radius:10px; display:block;
@@ -98,13 +98,13 @@ img.dog-photo{
 .card .meta{font-size:0.88rem;color:var(--muted)}
 /* Footer */
 .footer{ margin-top:0.75rem; font-size:0.8rem; color:var(--muted); text-align:center }
-/* Brindle accent bar — decorative */
+/* Barra tigrada — decorativa */
 .brindle-bar{
   height:8px; border-radius:8px; width:100%;
   background: linear-gradient(90deg, var(--fur-brindle-start), var(--fur-brindle-end));
   margin:0.8rem 0;
 }
-/* Responsive tweaks */
+/* Ajustes de responsividade */
 @media (min-width:640px){
   body{padding:2rem}
   h1{font-size:1.6rem}
